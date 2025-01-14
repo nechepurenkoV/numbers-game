@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #app {
@@ -33,6 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 }
 
 .current-example {
@@ -41,15 +42,21 @@ body {
   align-items: center;
 }
 
-#answer-input {
+p {
+  margin-right: 8px;
+}
+
+.answer-input {
   display: block;
   max-width: 80px;
-  margin-left: 8px;
   padding: 4px;
   font-size: 20px;
   border: 2px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s;
+}
+.answer-input.wrong {
+  border: 2px solid #ff0000;
 }
 
 .blocks-container {
@@ -81,10 +88,10 @@ body {
   background-color: #fa8072;
 }
 
-#submit-button.disabled {
-  background-color: #a9a9a9;
-}
-
 #submit-button:hover {
   background-color: #afeeee;
+}
+
+#submit-button.disabled {
+  background-color: #a9a9a9;
 }
