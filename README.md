@@ -1,5 +1,3 @@
-# Numbers Game
-
 ## Description
 
 Numbers Game is a simple web-based multiplication game where the user practices multiplication by solving problems one at a time. The game provides immediate feedback for both correct and incorrect answers, with dynamic animations and effects to enhance the user experience. The multiplication factor (N) is customizable.
