@@ -7,12 +7,12 @@ let currentI = 1;
 function addRow(i) {
   $("#tasks").append(`
     <div class="example-container">
-      <div class="current-example">
+      <div class="current-example" style="display: none">
         <p>${N} x ${i} =</p>
         <input class="answer-input" />
       </div>
 
-      <div class="blocks-container">
+      <div class="blocks-container" style="transform: translate(0, 500px)">
         <div class="green-block"></div>
         <div class="green-block"></div>
         <div class="green-block"></div>
@@ -30,7 +30,11 @@ function addRow(i) {
       $("#submit-button").removeClass("disabled").prop("disabled", false);
     }
   });
+
+  $(".current-example").last().fadeIn(500);
+  $(".blocks-container").last().css({ transform: "translate(0, 0)" });
 }
+
 addRow(1);
 
 function checkAnswer() {
