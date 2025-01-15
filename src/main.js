@@ -6,9 +6,9 @@ let currentI = 1;
 
 function addRow(i) {
   $("#tasks").append(`
-    <div class="example-container">
-      <div class="current-example" style="display: none">
-        <p>${N} x ${i} =</p>
+    <div class="task-container">
+      <div class="current-task" style="display: none">
+        <p class="task-text">${N} x ${i} =</p>
         <input class="answer-input" />
       </div>
 
@@ -23,7 +23,7 @@ function addRow(i) {
 
   $("#submit-button").addClass("disabled").prop("disabled", true);
 
-  $(".example-container .answer-input").on("input", (event) => {
+  $(".task-container .answer-input").on("input", (event) => {
     if (event.target.value === "") {
       $("#submit-button").addClass("disabled").prop("disabled", true);
     } else {
@@ -31,14 +31,12 @@ function addRow(i) {
     }
   });
 
-  $(".current-example").last().fadeIn(500);
+  $(".current-task").last().fadeIn(500);
   $(".blocks-container").last().css({ transform: "translate(0, 0)" });
 }
 
-addRow(1);
-
 function checkAnswer() {
-  const input = $(".example-container .answer-input");
+  const input = $(".task-container .answer-input");
   const correctAnswer = N * currentI;
   const value = Number($(".answer-input").val());
 
@@ -61,4 +59,7 @@ function checkAnswer() {
   }
 }
 
-$("#submit-button").on("click", checkAnswer);
+$(function () {
+  addRow(1);
+  $("#submit-button").on("click", checkAnswer);
+});

@@ -28,7 +28,7 @@ body {
   width: 100%;
 }
 
-.example-container {
+.task-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -36,13 +36,13 @@ body {
   margin-top: 20px;
 }
 
-.current-example {
+.current-task {
   font-size: 24px;
   display: flex;
   align-items: center;
 }
 
-p {
+.task-text {
   margin-right: 8px;
 }
 
